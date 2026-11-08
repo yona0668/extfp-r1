@@ -1,0 +1,89 @@
+{
+  "prespec": "protocols/EXTFP_PRESPEC.md 7.2/7.3/7.4 (frozen v1.1)",
+  "tau_applied": {
+    "yolov8m": 0.268,
+    "yolo11l": 0.146,
+    "rtdetr-l": 0.494
+  },
+  "negative_cohort_images": 1154,
+  "bootstrap": {
+    "unit": "image",
+    "joint_paired_across_arms": true,
+    "B": 10000,
+    "seed": 20260830,
+    "interval": "percentile",
+    "percentiles": [
+      2.5,
+      97.5
+    ]
+  },
+  "MID": 0.1,
+  "multiplicity": "confirmatory family size 1 (pair 0-1 only); no correction; Holm has no applicable target (7.3.1)",
+  "s7_2_pairs": [
+    {
+      "pair": "yolov8m - yolo11l",
+      "arm_a": "yolov8m",
+      "arm_b": "yolo11l",
+      "standing": "primary (confirmatory)",
+      "capacity_difference_pct": 2.1,
+      "delta_fp_per_image": -0.21143847487001732,
+      "ci95_percentile": [
+        -0.25563258232235697,
+        -0.16811091854419413
+      ],
+      "ci_excludes_zero": true,
+      "judged": true
+    },
+    {
+      "pair": "yolov8m - rtdetr-l",
+      "arm_a": "yolov8m",
+      "arm_b": "rtdetr-l",
+      "standing": "confounded secondary (exploratory)",
+      "capacity_difference_pct": 27.3,
+      "delta_fp_per_image": -0.24003466204506063,
+      "ci95_percentile": [
+        -0.28509532062391674,
+        -0.19584055459272098
+      ],
+      "ci_excludes_zero": true,
+      "judged": false
+    },
+    {
+      "pair": "yolo11l - rtdetr-l",
+      "arm_a": "yolo11l",
+      "arm_b": "rtdetr-l",
+      "standing": "confounded secondary (exploratory)",
+      "capacity_difference_pct": 30.0,
+      "delta_fp_per_image": -0.02859618717504331,
+      "ci95_percentile": [
+        -0.07798960138648181,
+        0.020797227036395083
+      ],
+      "ci_excludes_zero": false,
+      "judged": false
+    }
+  ],
+  "s7_3_primary": {
+    "pair": "yolov8m - yolo11l",
+    "delta_fp_per_image": -0.21143847487001732,
+    "adjusted_ci95": [
+      -0.25563258232235697,
+      -0.16811091854419413
+    ],
+    "endpoint_nearer_zero_abs": 0.16811091854419413,
+    "ci_excludes_zero": true,
+    "ci_inside_equivalence_range": false
+  },
+  "s7_3_2_verdict": "substantial difference",
+  "s7_3_2_reason": "CI excludes 0 and lies entirely outside the equivalence range: endpoints share a sign and the endpoint nearer 0 is |0.1681| >= MID 0.1",
+  "s7_4_conclusion_code": "P1",
+  "s7_4_conclusion": "Even between two detectors whose capacities are within 2.1% of each other, the false-alarm burden on external negative images differed substantially (>= MID).",
+  "s7_4_direction": "yolov8m lower",
+  "confounded_pairs_note": "RT-DETR-l has about 30% more parameters and is NMS-free, so this difference cannot separate the effect of architecture from the effect of capacity.",
+  "not_done": [
+    "causal attribution to architecture or attention",
+    "summing confounded pairs into the primary evidence",
+    "monotonic / ladder / generation-trend narration",
+    "any change to MID, tau, arms, pair standing or metric"
+  ]
+}

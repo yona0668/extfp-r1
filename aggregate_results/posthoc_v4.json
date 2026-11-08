@@ -1,0 +1,201 @@
+{
+  "STATUS": "POST HOC (v4 amendment); no verdicts",
+  "amendment": "protocols/EXTFP_AMENDMENT_v4_POSTHOC.md",
+  "amendment_sha256_lf": "28f5ecf00810363e7aae9264216591c57b5ddf28f015be69e5ba34aa2d7e01f3",
+  "s2_partial_area": {
+    "interval": [
+      0.3,
+      0.6
+    ],
+    "rule": "step, largest k",
+    "seed": 20261016,
+    "B": 10000,
+    "shares_s1_index": "e45af458b649f139a9358d5d92da129c2676049658f8c28a29a041c0ea136768",
+    "status": "OK",
+    "reach_failures": 0,
+    "n_valid": 10000,
+    "point_pa": {
+      "yolov8m": 1.0444072464506275,
+      "yolo11l": 0.8223450887865024
+    },
+    "point_delta": 0.22206215766412518,
+    "ci95_delta": [
+      0.03548190771333829,
+      0.4471177970843537
+    ],
+    "ci95_pa": {
+      "yolov8m": [
+        0.7766554315275644,
+        1.4449148458197705
+      ],
+      "yolo11l": [
+        0.6208437922723169,
+        1.155141320022294
+      ]
+    }
+  },
+  "s3_welch_seed_mean": {
+    "mean": {
+      "yolov8m": 0.6296938186019642,
+      "yolo11l": 0.6891969959560947
+    },
+    "sd": {
+      "yolov8m": 0.0395334768594469,
+      "yolo11l": 0.11962904904609366
+    },
+    "difference": -0.059503177354130576,
+    "se": 0.0727415634702039,
+    "df_welch": 2.431685775224729,
+    "t_0975": 3.6475386293451004,
+    "ci95": [
+      -0.3248308400706577,
+      0.20582448536239656
+    ],
+    "scipy": "1.15.3"
+  },
+  "s4_positive_image_fp": {
+    "yolov8m": {
+      "fp_per_positive_image": 1.0535168195718654,
+      "ci95": [
+        0.9602446483180428,
+        1.1498470948012232
+      ],
+      "tp": 523,
+      "fp_boxes": 689
+    },
+    "yolo11l": {
+      "fp_per_positive_image": 1.4464831804281346,
+      "ci95": [
+        1.3256880733944953,
+        1.5718654434250765
+      ],
+      "tp": 605,
+      "fp_boxes": 946
+    },
+    "rtdetr-l": {
+      "fp_per_positive_image": 1.1957186544342508,
+      "ci95": [
+        1.0978593272171253,
+        1.2966360856269112
+      ],
+      "tp": 539,
+      "fp_boxes": 782
+    }
+  },
+  "s4_image_specificity": {
+    "yolov8m": {
+      "image_specificity": 0.6221837088388215,
+      "ci95": [
+        0.5944540727902946,
+        0.6499133448873483
+      ],
+      "zero_fp_images": 718
+    },
+    "yolo11l": {
+      "image_specificity": 0.5632582322357019,
+      "ci95": [
+        0.5346620450606586,
+        0.5918544194107452
+      ],
+      "zero_fp_images": 650
+    },
+    "rtdetr-l": {
+      "image_specificity": 0.475736568457539,
+      "ci95": [
+        0.44714038128249567,
+        0.5051993067590987
+      ],
+      "zero_fp_images": 549
+    }
+  },
+  "s5_fig2_ci": {
+    "prespecified": {
+      "yolov8m": {
+        "tau": 0.268,
+        "fp_per_image": 0.5623916811091855,
+        "total_fp": 649,
+        "ci95": [
+          0.511265164644714,
+          0.6135181975736569
+        ]
+      },
+      "yolo11l": {
+        "tau": 0.146,
+        "fp_per_image": 0.7738301559792028,
+        "total_fp": 893,
+        "ci95": [
+          0.708838821490468,
+          0.8396880415944541
+        ]
+      },
+      "rtdetr-l": {
+        "tau": 0.494,
+        "fp_per_image": 0.8024263431542461,
+        "total_fp": 926,
+        "ci95": [
+          0.7469670710571924,
+          0.8587521663778163
+        ]
+      }
+    },
+    "internal_recall_0.50": {
+      "yolov8m": {
+        "tau": 0.417,
+        "fp_per_image": 0.3024263431542461,
+        "total_fp": 349,
+        "ci95": [
+          0.26776429809358754,
+          0.33884315424610023
+        ]
+      },
+      "yolo11l": {
+        "tau": 0.339,
+        "fp_per_image": 0.24090121317157712,
+        "total_fp": 278,
+        "ci95": [
+          0.20883882149046792,
+          0.2755632582322357
+        ]
+      },
+      "rtdetr-l": {
+        "tau": 0.629,
+        "fp_per_image": 0.35701906412478335,
+        "total_fp": 412,
+        "ci95": [
+          0.32322357019064124,
+          0.3925476603119584
+        ]
+      }
+    },
+    "internal_recall_0.70": {
+      "yolov8m": {
+        "tau": 0.171,
+        "fp_per_image": 0.854419410745234,
+        "total_fp": 986,
+        "ci95": [
+          0.7876949740034662,
+          0.9228769497400346
+        ]
+      },
+      "yolo11l": {
+        "tau": 0.146,
+        "fp_per_image": 0.7738301559792028,
+        "total_fp": 893,
+        "ci95": [
+          0.708838821490468,
+          0.8396880415944541
+        ]
+      },
+      "rtdetr-l": {
+        "tau": 0.478,
+        "fp_per_image": 0.8578856152512998,
+        "total_fp": 990,
+        "ci95": [
+          0.7998266897746967,
+          0.915944540727903
+        ]
+      }
+    }
+  },
+  "s6_item3_sentence": "The internal-to-external generalisation gap named in the protocol was not computed: the protocol defines no metric for it, and computing one would have required new inference on the internal test split, which this revision does not perform."
+}

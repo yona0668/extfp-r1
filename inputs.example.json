@@ -1,0 +1,20 @@
+{
+  "snapshots": {
+    "runs/extfp/tau_selection/tau_selection.json": {
+      "path": "references/tau_selection.json",
+      "sha256": "REPLACE_WITH_RECORDED_SHA256"
+    },
+    "runs/extfp/tau_selection_v2/tau_selection_v2.json": {
+      "path": "references/tau_selection_v2.json",
+      "sha256": "REPLACE_WITH_RECORDED_SHA256"
+    },
+    "runs/extfp/external/primary_endpoint.json": {
+      "path": "references/primary_endpoint.json",
+      "sha256": "REPLACE_WITH_RECORDED_SHA256"
+    },
+    "runs/extfp/external/pairwise_7274.json": {
+      "path": "references/pairwise_7274.json",
+      "sha256": "REPLACE_WITH_RECORDED_SHA256"
+    }
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "STATUS": "EXPLORATORY / DESCRIPTIVE ONLY -- NOT USED FOR 7.4 P1",
+  "prespec": "protocols/EXTFP_PRESPEC.md 7.5 (frozen v1.1)",
+  "prespec_sha256_crlf": "c04a522514c4214b16724005d871a52695adb0557207615e031e3e4cf801bddb",
+  "executed_items": [
+    1,
+    2,
+    5,
+    6,
+    7
+  ],
+  "withheld_items": {
+    "3": "generalisation gap 764 -> 654: metric and formula not specified in the frozen text",
+    "4": "test_alte_cabinete 180-image subgroup: metric not specified in the frozen text"
+  },
+  "not_done": [
+    "no new hypothesis test",
+    "no new MID",
+    "no superiority judgement",
+    "no new threshold",
+    "no new subgroup",
+    "no re-inference",
+    "7.1-7.4 unchanged"
+  ],
+  "inputs_verified": {
+    "tau": {
+      "yolov8m": 0.268,
+      "yolo11l": 0.146,
+      "rtdetr-l": 0.494
+    }
+  },
+  "environment": {
+    "python": "3.10.20",
+    "numpy": "2.2.6"
+  },
+  "match_iou": 0.5,
+  "arms": [
+    {
+      "arm": "yolov8m",
+      "operating_point_tau": 0.268,
+      "tau_source": "sealed internal-val threshold, never re-chosen",
+      "item1_positive_654": {
+        "exploratory": "not used for 7.4 P1",
+        "n_positive_images": 654,
+        "n_gt_lesion_boxes": 1259,
+        "at_operating_point_tau": {
+          "tau": 0.268,
+          "tp": 523,
+          "fp": 689,
+          "fn": 736,
+          "precision": 0.4315181518151815,
+          "recall": 0.41540905480540113,
+          "f1": 0.42331040064751113
+        },
+        "definition": "6.2 verbatim: matching IoU 0.50, greedy 1:1 score-descending, micro over all 654 images, class-agnostic (6.1)"
+      },
+      "item2_froc_curve": {
+        "exploratory": "not used for 7.4 P1",
+        "csv": "aggregate_results/secondary_75_froc_yolov8m.csv",
+        "grid": "0.001..0.999 step 0.001 (5.3)",
+        "x": "false positives per negative image (1,154 images, 7.1 definition)",
+        "y": "lesion recall on the 654 positive images (6.2 matching)",
+        "n_grid_points": 999,
+        "fp_per_image_at_grid_min_tau": 11.493934142114385,
+        "recall_at_grid_min_tau": 0.6902303415409055,
+        "max_recall_reached": 0.6902303415409055,
+        "grid_points_with_any_saturated_negative_image": 0
+      },
+      "item5_capacity_and_time": {
+        "exploratory": "not used for 7.4 P1",
+        "parameters_trained_checkpoint_unfused": 25858057,
+        "parameters_trained_checkpoint_fused": 25841497,
+        "parameters_prespec_14_millions": 25.9,
+        "note_14": "14's figures are the stock-config counts and stand unrevised; the capacity percentages in 7.2 / 4.1 are NOT recomputed here",
+        "external_inference_seconds_1808_images": 81.1,
+        "external_inference_ms_per_image": 44.83,
+        "timing_source": "measured during the original sealed run; not re-run"
+      },
+      "item6_tau_sensitivity": {
+        "exploratory": "not used for 7.4 P1",
+        "rule": "6.3-4: tau re-fixed at internal-val recall 0.50 and 0.70 instead of max F1; still selected on the INTERNAL val split (9 forbids external threshold selection); tie-break = largest tau reaching the target (6.2)",
+        "internal_val_gt_boxes": 678,
+        "points": [
+          {
+            "target_internal_recall": 0.5,
+            "tau": 0.417,
+            "internal_val_recall_at_tau": 0.5,
+            "external_fp_per_image": 0.3024263431542461,
+            "external_total_fp": 349,
+            "external_lesion_recall_654": 0.33915806195393167,
+            "external_lesion_f1_654": 0.4053156146179402,
+            "negative_images_saturated_at_tau": 0,
+            "censored": false
+          },
+          {
+            "target_internal_recall": 0.7,
+            "tau": 0.171,
+            "internal_val_recall_at_tau": 0.700589970501475,
+            "external_fp_per_image": 0.854419410745234,
+            "external_total_fp": 986,
+            "external_lesion_recall_654": 0.46068308181096107,
+            "external_lesion_f1_654": 0.41696621135873474,
+            "negative_images_saturated_at_tau": 0,
+            "censored": false
+          }
+        ]
+      },
+      "item7_max_det_saturation": {
+        "exploratory": "not used for 7.4 P1",
+        "max_det": 300,
+        "rule": "5.3: saturation is only material if the stored list is still full at tau",
+        "positive_images_saturated_at_storage": 0,
+        "negative_images_saturated_at_storage": 0,
+        "negative_images_saturated_at_operating_point_tau": 0,
+        "negative_images_saturated_at_sensitivity_points": {
+          "0.5": 0,
+          "0.7": 0
+        },
+        "max_over_whole_grid": 0,
+        "censored_anywhere": false
+      }
+    },
+    {
+      "arm": "yolo11l",
+      "operating_point_tau": 0.146,
+      "tau_source": "sealed internal-val threshold, never re-chosen",
+      "item1_positive_654": {
+        "exploratory": "not used for 7.4 P1",
+        "n_positive_images": 654,
+        "n_gt_lesion_boxes": 1259,
+        "at_operating_point_tau": {
+          "tau": 0.146,
+          "tp": 605,
+          "fp": 946,
+          "fn": 654,
+          "precision": 0.3900709219858156,
+          "recall": 0.4805401111993646,
+          "f1": 0.4306049822064057
+        },
+        "definition": "6.2 verbatim: matching IoU 0.50, greedy 1:1 score-descending, micro over all 654 images, class-agnostic (6.1)"
+      },
+      "item2_froc_curve": {
+        "exploratory": "not used for 7.4 P1",
+        "csv": "aggregate_results/secondary_75_froc_yolo11l.csv",
+        "grid": "0.001..0.999 step 0.001 (5.3)",
+        "x": "false positives per negative image (1,154 images, 7.1 definition)",
+        "y": "lesion recall on the 654 positive images (6.2 matching)",
+        "n_grid_points": 999,
+        "fp_per_image_at_grid_min_tau": 15.775563258232236,
+        "recall_at_grid_min_tau": 0.7466243050039714,
+        "max_recall_reached": 0.7466243050039714,
+        "grid_points_with_any_saturated_negative_image": 0
+      },
+      "item5_capacity_and_time": {
+        "exploratory": "not used for 7.4 P1",
+        "parameters_trained_checkpoint_unfused": 25312793,
+        "parameters_trained_checkpoint_fused": 25281625,
+        "parameters_prespec_14_millions": 25.37,
+        "note_14": "14's figures are the stock-config counts and stand unrevised; the capacity percentages in 7.2 / 4.1 are NOT recomputed here",
+        "external_inference_seconds_1808_images": 83.9,
+        "external_inference_ms_per_image": 46.38,
+        "timing_source": "measured during the original sealed run; not re-run"
+      },
+      "item6_tau_sensitivity": {
+        "exploratory": "not used for 7.4 P1",
+        "rule": "6.3-4: tau re-fixed at internal-val recall 0.50 and 0.70 instead of max F1; still selected on the INTERNAL val split (9 forbids external threshold selection); tie-break = largest tau reaching the target (6.2)",
+        "internal_val_gt_boxes": 678,
+        "points": [
+          {
+            "target_internal_recall": 0.5,
+            "tau": 0.339,
+            "internal_val_recall_at_tau": 0.5,
+            "external_fp_per_image": 0.24090121317157712,
+            "external_total_fp": 278,
+            "external_lesion_recall_654": 0.3415409054805401,
+            "external_lesion_f1_654": 0.41808458920758385,
+            "negative_images_saturated_at_tau": 0,
+            "censored": false
+          },
+          {
+            "target_internal_recall": 0.7,
+            "tau": 0.146,
+            "internal_val_recall_at_tau": 0.7035398230088495,
+            "external_fp_per_image": 0.7738301559792028,
+            "external_total_fp": 893,
+            "external_lesion_recall_654": 0.4805401111993646,
+            "external_lesion_f1_654": 0.4306049822064057,
+            "negative_images_saturated_at_tau": 0,
+            "censored": false
+          }
+        ]
+      },
+      "item7_max_det_saturation": {
+        "exploratory": "not used for 7.4 P1",
+        "max_det": 300,
+        "rule": "5.3: saturation is only material if the stored list is still full at tau",
+        "positive_images_saturated_at_storage": 0,
+        "negative_images_saturated_at_storage": 0,
+        "negative_images_saturated_at_operating_point_tau": 0,
+        "negative_images_saturated_at_sensitivity_points": {
+          "0.5": 0,
+          "0.7": 0
+        },
+        "max_over_whole_grid": 0,
+        "censored_anywhere": false
+      }
+    },
+    {
+      "arm": "rtdetr-l",
+      "operating_point_tau": 0.494,
+      "tau_source": "sealed internal-val threshold, never re-chosen",
+      "item1_positive_654": {
+        "exploratory": "not used for 7.4 P1",
+        "n_positive_images": 654,
+        "n_gt_lesion_boxes": 1259,
+        "at_operating_point_tau": {
+          "tau": 0.494,
+          "tp": 539,
+          "fp": 782,
+          "fn": 720,
+          "precision": 0.4080242240726722,
+          "recall": 0.42811755361397935,
+          "f1": 0.4178294573643411
+        },
+        "definition": "6.2 verbatim: matching IoU 0.50, greedy 1:1 score-descending, micro over all 654 images, class-agnostic (6.1)"
+      },
+      "item2_froc_curve": {
+        "exploratory": "not used for 7.4 P1",
+        "csv": "aggregate_results/secondary_75_froc_rtdetr-l.csv",
+        "grid": "0.001..0.999 step 0.001 (5.3)",
+        "x": "false positives per negative image (1,154 images, 7.1 definition)",
+        "y": "lesion recall on the 654 positive images (6.2 matching)",
+        "n_grid_points": 999,
+        "fp_per_image_at_grid_min_tau": 240.973136915078,
+        "recall_at_grid_min_tau": 0.767275615567911,
+        "max_recall_reached": 0.767275615567911,
+        "grid_points_with_any_saturated_negative_image": 0
+      },
+      "item5_capacity_and_time": {
+        "exploratory": "not used for 7.4 P1",
+        "parameters_trained_checkpoint_unfused": 32812241,
+        "parameters_trained_checkpoint_fused": 31989905,
+        "parameters_prespec_14_millions": 32.97,
+        "note_14": "14's figures are the stock-config counts and stand unrevised; the capacity percentages in 7.2 / 4.1 are NOT recomputed here",
+        "external_inference_seconds_1808_images": 186.8,
+        "external_inference_ms_per_image": 103.32,
+        "timing_source": "measured during the original sealed run; not re-run"
+      },
+      "item6_tau_sensitivity": {
+        "exploratory": "not used for 7.4 P1",
+        "rule": "6.3-4: tau re-fixed at internal-val recall 0.50 and 0.70 instead of max F1; still selected on the INTERNAL val split (9 forbids external threshold selection); tie-break = largest tau reaching the target (6.2)",
+        "internal_val_gt_boxes": 678,
+        "points": [
+          {
+            "target_internal_recall": 0.5,
+            "tau": 0.629,
+            "internal_val_recall_at_tau": 0.504424778761062,
+            "external_fp_per_image": 0.35701906412478335,
+            "external_total_fp": 412,
+            "external_lesion_recall_654": 0.3216838760921366,
+            "external_lesion_f1_654": 0.3926320891904993,
+            "negative_images_saturated_at_tau": 0,
+            "censored": false
+          },
+          {
+            "target_internal_recall": 0.7,
+            "tau": 0.478,
+            "internal_val_recall_at_tau": 0.700589970501475,
+            "external_fp_per_image": 0.8578856152512998,
+            "external_total_fp": 990,
+            "external_lesion_recall_654": 0.4344718030182685,
+            "external_lesion_f1_654": 0.4131419939577039,
+            "negative_images_saturated_at_tau": 0,
+            "censored": false
+          }
+        ]
+      },
+      "item7_max_det_saturation": {
+        "exploratory": "not used for 7.4 P1",
+        "max_det": 300,
+        "rule": "5.3: saturation is only material if the stored list is still full at tau",
+        "positive_images_saturated_at_storage": 0,
+        "negative_images_saturated_at_storage": 0,
+        "negative_images_saturated_at_operating_point_tau": 0,
+        "negative_images_saturated_at_sensitivity_points": {
+          "0.5": 0,
+          "0.7": 0
+        },
+        "max_over_whole_grid": 0,
+        "censored_anywhere": false
+      }
+    }
+  ]
+}

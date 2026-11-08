@@ -1,0 +1,182 @@
+{
+  "prespec": "protocols/EXTFP_PRESPEC_v2_EXTENSION.md SV6 (frozen v2.0) + v2.1 clarification; bootstrap/trifurcation per v1.1 7.3.1/7.3.2",
+  "tau_applied": {
+    "yolov8m-s0": 0.223,
+    "yolov9c-s0": 0.274,
+    "yolo11l-s0": 0.187,
+    "yolov8m-s1": 0.169,
+    "yolov9c-s1": 0.245,
+    "yolo11l-s1": 0.169,
+    "yolov8m-s2": 0.212,
+    "yolov9c-s2": 0.239,
+    "yolo11l-s2": 0.241
+  },
+  "mid": 0.1,
+  "bootstrap": {
+    "B": 10000,
+    "seed": 20260903,
+    "unit": "image (1,154 negatives), joint across all nine runs",
+    "ci": "percentile; 95% decides, 97.5% sensitivity reported (SV6)",
+    "rng": "numpy default_rng"
+  },
+  "n_negative_images": 1154,
+  "burden_per_run": {
+    "yolov8m-s0": 0.584055459272097,
+    "yolov9c-s0": 0.48440207972270366,
+    "yolo11l-s0": 0.8206239168110918,
+    "yolov8m-s1": 0.6516464471403813,
+    "yolov9c-s1": 0.7166377816291161,
+    "yolo11l-s1": 0.6603119584055459,
+    "yolov8m-s2": 0.6533795493934142,
+    "yolov9c-s2": 0.6395147313691508,
+    "yolo11l-s2": 0.5866551126516465
+  },
+  "censoring_5_3": {
+    "yolov8m-s0": {
+      "negative_images_saturated_at_tau": 0,
+      "censored": false
+    },
+    "yolov9c-s0": {
+      "negative_images_saturated_at_tau": 0,
+      "censored": false
+    },
+    "yolo11l-s0": {
+      "negative_images_saturated_at_tau": 0,
+      "censored": false
+    },
+    "yolov8m-s1": {
+      "negative_images_saturated_at_tau": 0,
+      "censored": false
+    },
+    "yolov9c-s1": {
+      "negative_images_saturated_at_tau": 0,
+      "censored": false
+    },
+    "yolo11l-s1": {
+      "negative_images_saturated_at_tau": 0,
+      "censored": false
+    },
+    "yolov8m-s2": {
+      "negative_images_saturated_at_tau": 0,
+      "censored": false
+    },
+    "yolov9c-s2": {
+      "negative_images_saturated_at_tau": 0,
+      "censored": false
+    },
+    "yolo11l-s2": {
+      "negative_images_saturated_at_tau": 0,
+      "censored": false
+    }
+  },
+  "E1": {
+    "definition": "Delta_r = burden(yolov8m, r) - burden(yolo11l, r), r in {0,1,2}; v1 anchor direction Delta < 0 (arm 0 lower), anchor value -0.2114 (seed 20260515, out of matrix, cited not recomputed)",
+    "per_seed": [
+      {
+        "seed": 0,
+        "delta_obs": -0.2365684575389948,
+        "ci95": [
+          -0.28509532062391685,
+          -0.18977469670710567
+        ],
+        "verdict_95": "S_same",
+        "ci975_sensitivity": [
+          -0.29289428076256496,
+          -0.18457538994800693
+        ],
+        "verdict_975_sensitivity": "S_same"
+      },
+      {
+        "seed": 1,
+        "delta_obs": -0.008665511265164572,
+        "ci95": [
+          -0.05285961871750433,
+          0.03639514731369142
+        ],
+        "verdict_95": "EQ",
+        "ci975_sensitivity": [
+          -0.05979202772963599,
+          0.04159445407279028
+        ],
+        "verdict_975_sensitivity": "EQ"
+      },
+      {
+        "seed": 2,
+        "delta_obs": 0.06672443674176776,
+        "ci95": [
+          0.023396880415944565,
+          0.10918544194107449
+        ],
+        "verdict_95": "IND",
+        "ci975_sensitivity": [
+          0.017331022530329254,
+          0.11526213171577189
+        ],
+        "verdict_975_sensitivity": "IND"
+      }
+    ],
+    "branch_95": "R2",
+    "branch_975_sensitivity": "R2"
+  },
+  "E2": {
+    "M": [
+      "yolov8m",
+      "yolov9c",
+      "yolo11l"
+    ],
+    "model_mean_burden": {
+      "yolov8m": 0.6296938186019642,
+      "yolov9c": 0.6135181975736569,
+      "yolo11l": 0.6891969959560947
+    },
+    "model_argmax": "yolo11l",
+    "model_argmin": "yolov9c",
+    "D_obs": 0.07567879838243785,
+    "ci95": [
+      0.05198584633160003,
+      0.10167533217793179
+    ],
+    "verdict_95": "G3",
+    "ci975_sensitivity": [
+      0.048526863084921934,
+      0.10543038705950325
+    ],
+    "verdict_975_sensitivity": "G3"
+  },
+  "descriptive_within_model_seed_variation": {
+    "yolov8m": {
+      "per_seed": {
+        "0": 0.584055459272097,
+        "1": 0.6516464471403813,
+        "2": 0.6533795493934142
+      },
+      "range_max_minus_min": 0.06932409012131724,
+      "sd_sample": 0.0395334768594469
+    },
+    "yolov9c": {
+      "per_seed": {
+        "0": 0.48440207972270366,
+        "1": 0.7166377816291161,
+        "2": 0.6395147313691508
+      },
+      "range_max_minus_min": 0.2322357019064124,
+      "sd_sample": 0.11828026097801021
+    },
+    "yolo11l": {
+      "per_seed": {
+        "0": 0.8206239168110918,
+        "1": 0.6603119584055459,
+        "2": 0.5866551126516465
+      },
+      "range_max_minus_min": 0.23396880415944532,
+      "sd_sample": 0.11962904904609366
+    }
+  },
+  "delta_0_1_listing": {
+    "v1_anchor_seed20260515": -0.2114,
+    "seed0": -0.2365684575389948,
+    "seed1": -0.008665511265164572,
+    "seed2": 0.06672443674176776
+  },
+  "n_preflight_checks": 43
+}

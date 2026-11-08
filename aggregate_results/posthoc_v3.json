@@ -1,0 +1,111 @@
+{
+  "STATUS": "POST HOC (v3 amendment); does not change v1 P1 or v2 E1/E2",
+  "amendment": "protocols/EXTFP_AMENDMENT_v3_POSTHOC_DRAFT.md",
+  "amendment_sha256": "3400864c86c9fd297689976f29dfcaf58841976452a47dcf648d965c99ff97c6",
+  "environment": {
+    "python": "3.12.9",
+    "numpy": "2.4.6"
+  },
+  "s1": {
+    "R_star": 0.45,
+    "seed": 20261016,
+    "B": 10000,
+    "full_sample": {
+      "yolov8m": {
+        "tau": 0.192,
+        "recall": 0.4511517077045274,
+        "fp_per_image": 0.7824956672443674
+      },
+      "yolo11l": {
+        "tau": 0.182,
+        "recall": 0.45194598888006354,
+        "fp_per_image": 0.6143847487001733
+      }
+    },
+    "point_delta": 0.16811091854419402,
+    "reach_failures": 0,
+    "n_valid": 10000,
+    "ci95": [
+      0.03206239168110925,
+      0.34488734835355284
+    ],
+    "verdict": "D",
+    "index_digest": "e45af458b649f139a9358d5d92da129c2676049658f8c28a29a041c0ea136768"
+  },
+  "s4_1a_box_decomposition": {
+    "yolov8m": {
+      "tau": 0.268,
+      "overlap_confusable": 371,
+      "other": 278,
+      "overlap_per_image": 0.3214904679376083,
+      "other_per_image": 0.24090121317157712,
+      "clean_negative_fp_per_image_sealed": 0.2765957446808511
+    },
+    "yolo11l": {
+      "tau": 0.146,
+      "overlap_confusable": 500,
+      "other": 393,
+      "overlap_per_image": 0.43327556325823224,
+      "other_per_image": 0.34055459272097055,
+      "clean_negative_fp_per_image_sealed": 0.41843971631205673
+    },
+    "rtdetr-l": {
+      "tau": 0.494,
+      "overlap_confusable": 517,
+      "other": 409,
+      "overlap_per_image": 0.4480069324090121,
+      "other_per_image": 0.354419410745234,
+      "clean_negative_fp_per_image_sealed": 0.4219858156028369
+    }
+  },
+  "s4_1d_arm_ci_prespecified_tau": {
+    "yolov8m": {
+      "tau": 0.268,
+      "fp_per_image": 0.5623916811091855,
+      "total_fp": 649,
+      "ci95": [
+        0.511265164644714,
+        0.6135181975736569
+      ]
+    },
+    "yolo11l": {
+      "tau": 0.146,
+      "fp_per_image": 0.7738301559792028,
+      "total_fp": 893,
+      "ci95": [
+        0.708838821490468,
+        0.8396880415944541
+      ]
+    },
+    "rtdetr-l": {
+      "tau": 0.494,
+      "fp_per_image": 0.8024263431542461,
+      "total_fp": 926,
+      "ci95": [
+        0.7469670710571924,
+        0.8587521663778163
+      ]
+    }
+  },
+  "s4_2_subgroup_test_alte_cabinete": {
+    "yolov8m": {
+      "negative_fp_per_image_132": 0.6363636363636364,
+      "positive_lesion_recall_48": 0.4716981132075472
+    },
+    "yolo11l": {
+      "negative_fp_per_image_132": 0.8636363636363636,
+      "positive_lesion_recall_48": 0.5188679245283019
+    },
+    "rtdetr-l": {
+      "negative_fp_per_image_132": 0.8333333333333334,
+      "positive_lesion_recall_48": 0.46226415094339623
+    }
+  },
+  "ac6_v1_reproduction": {
+    "delta": -0.21143847487001732,
+    "ci95": [
+      -0.25563258232235697,
+      -0.16811091854419413
+    ]
+  }
+}

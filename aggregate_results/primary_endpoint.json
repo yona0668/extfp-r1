@@ -1,0 +1,123 @@
+{
+  "prespec": "protocols/EXTFP_PRESPEC.md 7.1 (frozen v1.1)",
+  "tau_applied": {
+    "yolov8m": 0.268,
+    "yolo11l": 0.146,
+    "rtdetr-l": 0.494
+  },
+  "gate_g6": "PASS",
+  "definition": "on a negative image every box with score >= tau is a false positive; 8 hard/clean is NOT applied to the primary (7.1)",
+  "cohort": {
+    "counts": {
+      "total": 1808,
+      "positive": 654,
+      "negative": 1154,
+      "subgroup_test_alte_cabinete": 180,
+      "negative_hard": 872,
+      "negative_clean": 282,
+      "total_boxes": 24891,
+      "lesion_boxes": 1259,
+      "empty_label_files": 0,
+      "negative_boxes": 14375,
+      "negative_boxes_median": 11.0
+    }
+  },
+  "arms": [
+    {
+      "arm": "yolov8m",
+      "tau": 0.268,
+      "n_negative_images": 1154,
+      "n_positive_images": 654,
+      "total_false_positives": 649,
+      "fp_per_image_mean": 0.5623916811091855,
+      "fp_per_image_median": 0.0,
+      "fp_per_image_q1": 0.0,
+      "fp_per_image_q3": 1.0,
+      "fp_per_image_iqr": 1.0,
+      "fp_per_image_max": 6,
+      "images_with_any_fp": 436,
+      "prop_images_with_any_fp": 0.3778162911611785,
+      "fp_count_distribution": {
+        "0": 718,
+        "1": 290,
+        "2": 102,
+        "3+": 44
+      },
+      "negative_images_saturated_at_tau": 0,
+      "censored": false,
+      "secondary": {
+        "hard_negative_images": 872,
+        "hard_fp_per_image_mean": 0.6548165137614679,
+        "clean_negative_images": 282,
+        "clean_fp_per_image_mean": 0.2765957446808511,
+        "subgroup_test_alte_cabinete_negative_images": 132,
+        "subgroup_fp_per_image_mean": 0.6363636363636364,
+        "positive_images_boxes_at_tau": 1212
+      }
+    },
+    {
+      "arm": "yolo11l",
+      "tau": 0.146,
+      "n_negative_images": 1154,
+      "n_positive_images": 654,
+      "total_false_positives": 893,
+      "fp_per_image_mean": 0.7738301559792028,
+      "fp_per_image_median": 0.0,
+      "fp_per_image_q1": 0.0,
+      "fp_per_image_q3": 1.0,
+      "fp_per_image_iqr": 1.0,
+      "fp_per_image_max": 7,
+      "images_with_any_fp": 504,
+      "prop_images_with_any_fp": 0.43674176776429807,
+      "fp_count_distribution": {
+        "0": 650,
+        "1": 270,
+        "2": 137,
+        "3+": 97
+      },
+      "negative_images_saturated_at_tau": 0,
+      "censored": false,
+      "secondary": {
+        "hard_negative_images": 872,
+        "hard_fp_per_image_mean": 0.8887614678899083,
+        "clean_negative_images": 282,
+        "clean_fp_per_image_mean": 0.41843971631205673,
+        "subgroup_test_alte_cabinete_negative_images": 132,
+        "subgroup_fp_per_image_mean": 0.8636363636363636,
+        "positive_images_boxes_at_tau": 1551
+      }
+    },
+    {
+      "arm": "rtdetr-l",
+      "tau": 0.494,
+      "n_negative_images": 1154,
+      "n_positive_images": 654,
+      "total_false_positives": 926,
+      "fp_per_image_mean": 0.8024263431542461,
+      "fp_per_image_median": 1.0,
+      "fp_per_image_q1": 0.0,
+      "fp_per_image_q3": 1.0,
+      "fp_per_image_iqr": 1.0,
+      "fp_per_image_max": 5,
+      "images_with_any_fp": 605,
+      "prop_images_with_any_fp": 0.524263431542461,
+      "fp_count_distribution": {
+        "0": 549,
+        "1": 385,
+        "2": 146,
+        "3+": 74
+      },
+      "negative_images_saturated_at_tau": 0,
+      "censored": false,
+      "secondary": {
+        "hard_negative_images": 872,
+        "hard_fp_per_image_mean": 0.9254587155963303,
+        "clean_negative_images": 282,
+        "clean_fp_per_image_mean": 0.4219858156028369,
+        "subgroup_test_alte_cabinete_negative_images": 132,
+        "subgroup_fp_per_image_mean": 0.8333333333333334,
+        "positive_images_boxes_at_tau": 1321
+      }
+    }
+  ]
+}

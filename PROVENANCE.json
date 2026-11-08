@@ -1,0 +1,57 @@
+{
+  "prepared": "2026-11-07",
+  "public_registration_before_study": false,
+  "protocols": [
+    {
+      "file": "protocols/EXTFP_PRESPEC_v1.0.md",
+      "local_specification_date": "2026-08-29",
+      "original_sha256": "6e452f833cd0d09aeb54f05a56c511c5995a0e077b489c7e2bdb3c77205c0c9e",
+      "original_lf_sha256": "ae5353775ac089786553ddd7c3e5016aa1a91aa5e7a6f04121eb0c4d65e1014f",
+      "public_sha256": "9962cedceda887c3d405b9d1176477fb4ffc86337fe016ee8efa41f5497bc221",
+      "form": "edited scientific extracts, English translation"
+    },
+    {
+      "file": "protocols/EXTFP_PRESPEC.md",
+      "local_specification_date": "2026-08-30",
+      "original_sha256": "c04a522514c4214b16724005d871a52695adb0557207615e031e3e4cf801bddb",
+      "original_lf_sha256": "311f84c93e125178fa294630c9972471eba2dcc79be4108e1cfb2d2cbf10ba04",
+      "public_sha256": "66ee1a55495b75553b6c4e3c437181f36f9807a9803522f514d794418a2979c4",
+      "form": "edited scientific extracts, English translation"
+    },
+    {
+      "file": "protocols/EXTFP_PRESPEC_v2_EXTENSION.md",
+      "local_specification_date": "2026-09-01",
+      "original_sha256": "17af4cc43601d297df8e2fdb6379007db6969584e1397761f54a0fb7bc71bc82",
+      "original_lf_sha256": "17af4cc43601d297df8e2fdb6379007db6969584e1397761f54a0fb7bc71bc82",
+      "public_sha256": "50ce295def406b87ea87d9c754e237d874cfa260db8069247ad59261b9e8c38b",
+      "form": "edited scientific extracts, English translation"
+    },
+    {
+      "file": "protocols/EXTFP_PRESPEC_v2.1_CLARIFICATION.md",
+      "local_specification_date": "2026-09-02",
+      "original_sha256": "d497a138125d188f9e6f08745959556ce494073f9c7ce32f6c5b7e8d7e91f78e",
+      "original_lf_sha256": "d497a138125d188f9e6f08745959556ce494073f9c7ce32f6c5b7e8d7e91f78e",
+      "public_sha256": "d893f1ab7cd458a686eda5775f639263953d8b85f4824c1c3bba2cf5e92d6528",
+      "form": "edited scientific extracts"
+    },
+    {
+      "file": "protocols/EXTFP_AMENDMENT_v3_POSTHOC_DRAFT.md",
+      "local_specification_date": "2026-10-19",
+      "original_sha256": "3400864c86c9fd297689976f29dfcaf58841976452a47dcf648d965c99ff97c6",
+      "original_lf_sha256": "3557f09b5d986d5e32279f455d740e43bbdcba1945f1fe3f124e612a3ef77c84",
+      "public_sha256": "f9d7bfd37b4838c6387cd3fae20a3858ff24d0372f04928d6033adfaf5a6aec2",
+      "form": "edited scientific extracts, English translation"
+    },
+    {
+      "file": "protocols/EXTFP_AMENDMENT_v4_POSTHOC.md",
+      "local_specification_date": "2026-10-28",
+      "original_sha256": "28f5ecf00810363e7aae9264216591c57b5ddf28f015be69e5ba34aa2d7e01f3",
+      "original_lf_sha256": "28f5ecf00810363e7aae9264216591c57b5ddf28f015be69e5ba34aa2d7e01f3",
+      "public_sha256": "e57f5273f5b2ef48faa761fd98d97ca7994d3324e649abf5bdf59756a66f0c46",
+      "form": "edited scientific extracts, English translation"
+    }
+  ],
+  "section_map": "PROTOCOL_MAP.md",
+  "section_map_sha256": "1b4d5f00b5e87cc85798ab96f9c4979f4cd945772f94b32c7ca4f08fed4ccb7a",
+  "aggregate_copy_note": "Numerical results preserved; metadata and package-relative references adapted; two text fields of pairwise_7274.json translated into English. Public byte identities are in SHA256SUMS."
+}
